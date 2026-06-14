@@ -25,6 +25,11 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: Generate Native App wrappers
+        run: |
+          cd mobile_app
+          flutter create --org com.rmr193.musicy --project-name musicy_mobile --platforms=android .
+
       - name: Install dependencies
         run: |
           cd mobile_app
