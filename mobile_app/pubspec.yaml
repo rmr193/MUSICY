@@ -1,0 +1,36 @@
+name: musicy_mobile
+description: A Spotify Clone Mobile App built in Flutter.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Icons
+  font_awesome_flutter: ^10.4.0
+
+  # Audio Player
+  just_audio: ^0.9.36
+
+  # YouTube metadata & streaming URL extraction
+  youtube_explode_dart: ^2.2.1
+
+  # Local persistence
+  shared_preferences: ^2.2.2
+
+  # Cache network images
+  cached_network_image: ^3.3.1
+
+  # State Management
+  provider: ^6.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
