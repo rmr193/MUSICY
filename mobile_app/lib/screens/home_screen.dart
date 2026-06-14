@@ -100,7 +100,7 @@ class HomeScreen extends StatelessWidget {
                   } else {
                     artwork = Container(
                       color: Colors.grey[900],
-                      child: const Icon(Icons.music_note, color: Colors.white55),
+                      child: const Icon(Icons.music_note, color: Colors.white54),
                     );
                   }
 

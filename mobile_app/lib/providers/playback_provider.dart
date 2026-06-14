@@ -182,6 +182,24 @@ class PlaybackProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setActiveQueue(List<Track> tracks, int index) {
+    _activeQueue = tracks;
+    _activeQueueIndex = index;
+    notifyListeners();
+  }
+
+  void playShuffled(List<Track> tracks) {
+    if (tracks.isEmpty) return;
+    _activeQueue = List<Track>.from(tracks);
+    _isShuffle = true;
+    
+    // Pick random index
+    final startIdx = (DateTime.now().millisecondsSinceEpoch) % tracks.length;
+    _activeQueueIndex = startIdx;
+    notifyListeners();
+    playTrack(_activeQueue[startIdx], queue: _activeQueue, index: startIdx);
+  }
+
   // ----------------------------------------------------
   // LIBRARY & PLAYLIST MANAGEMENT
   // ----------------------------------------------------

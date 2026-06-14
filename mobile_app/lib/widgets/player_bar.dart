@@ -53,7 +53,7 @@ class PlayerBar extends StatelessWidget {
                   height: 44,
                   fit: BoxFit.cover,
                   placeholder: (context, url) => Container(color: Colors.grey[900]),
-                  errorWidget: (context, url, error) => const Icon(Icons.music_note, color: Colors.white55),
+                  errorWidget: (context, url, error) => const Icon(Icons.music_note, color: Colors.white54),
                 ),
               ),
               const SizedBox(width: 10),

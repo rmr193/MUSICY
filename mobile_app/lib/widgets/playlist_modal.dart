@@ -97,12 +97,14 @@ class PlaylistModal {
             children: [
               const Padding(
                 padding: EdgeInsets.only(left: 8, bottom: 16),
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                child: Text(
+                  'Add to playlist',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
                 ),
-                child: Text('Add to playlist'),
               ),
               if (playlists.isEmpty)
                 const Padding(
@@ -122,7 +124,7 @@ class PlaylistModal {
                     itemBuilder: (context, index) {
                       final pl = playlists[index];
                       return ListTile(
-                        leading: const Icon(Icons.music_note, color: Colors.white55),
+                        leading: const Icon(Icons.music_note, color: Colors.white54),
                         title: Text(
                           pl.name,
                           style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w500),

@@ -129,7 +129,7 @@ class LibraryScreen extends StatelessWidget {
                       color: Colors.grey[900],
                       borderRadius: BorderRadius.circular(4),
                     ),
-                    child: const Icon(Icons.music_note, color: Colors.white55, size: 24),
+                    child: const Icon(Icons.music_note, color: Colors.white54, size: 24),
                   );
                 }
 

@@ -64,13 +64,17 @@ class PlaylistScreen extends StatelessWidget {
                       child: Container(
                         width: 140,
                         height: 140,
-                        shadows: const [
-                          BoxShadow(
-                            color: Colors.black45,
-                            blurRadius: 16,
-                            offset: Offset(0, 8),
-                          ),
-                        ],
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black45,
+                              blurRadius: 16,
+                              offset: Offset(0, 8),
+                            ),
+                          ],
+                        ),
+                        clipBehavior: Clip.antiAlias,
                         child: isLikedSongs
                             ? Container(
                                 decoration: const BoxDecoration(
@@ -93,7 +97,7 @@ class PlaylistScreen extends StatelessWidget {
                                   )
                                 : Container(
                                     color: Colors.grey[900],
-                                    child: const Icon(Icons.music_note, color: Colors.white55, size: 60),
+                                    child: const Icon(Icons.music_note, color: Colors.white54, size: 60),
                                   ),
                       ),
                     ),
@@ -280,12 +284,4 @@ class PlaylistScreen extends StatelessWidget {
     );
   }
 }
-extension ContainerShadowExtension on Container {
-  Container withShadows(List<BoxShadow> shadows) {
-    return Container(
-      decoration: decoration?.copyWith(boxShadow: shadows) ?? BoxDecoration(boxShadow: shadows),
-      clipBehavior: clipBehavior,
-      child: child,
-    );
-  }
-}
+
