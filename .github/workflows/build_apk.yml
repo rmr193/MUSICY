@@ -30,6 +30,25 @@ jobs:
           cd mobile_app
           flutter create --org com.rmr193.musicy --project-name musicy_mobile --platforms=android .
 
+      - name: Add Internet Permission for Android Release
+        run: |
+          python -c "
+          import os
+          path = 'mobile_app/android/app/src/main/AndroidManifest.xml'
+          if os.path.exists(path):
+              with open(path, 'r') as f:
+                  content = f.read()
+              if 'android.permission.INTERNET' not in content:
+                  content = content.replace('<application', '<uses-permission android:name=\"android.permission.INTERNET\"/>\n    <application')
+                  with open(path, 'w') as f:
+                      f.write(content)
+                  print('Added Internet permission successfully')
+              else:
+                  print('Internet permission already exists')
+          else:
+              print('AndroidManifest.xml not found at ' + path)
+          "
+
       - name: Install dependencies
         run: |
           cd mobile_app
